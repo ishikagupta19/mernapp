@@ -47,6 +47,9 @@ app.get('/signup', (req,res) => {
     res.send("Hello signup from the developer world");
 });
 
+if (process.env.NODE_ENV == "production") {
+    app.use(express.static("client/build"));
+}
 
 
 app.listen(PORT, () => {
